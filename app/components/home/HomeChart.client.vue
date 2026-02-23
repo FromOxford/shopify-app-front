@@ -137,8 +137,13 @@ const xTicks = (i: number) => {
   return formatDate(data.value[i].date);
 };
 
-const template = (d: DataRecord) =>
-  `${formatDate(d.date ?? null)}: ${formatNumber(d.amount ?? 0)}`;
+const template = (d?: DataRecord) => {
+  if (!d) {
+    return "";
+  }
+
+  return `${formatDate(d.date)}: ${formatNumber(d.amount ?? 0)}`;
+};
 </script>
 
 <template>

@@ -49,7 +49,7 @@ const { data } = await useAsyncData<Sale[]>(
   },
   {
     watch: [() => props.range.start, () => props.range.end],
-    default: () => [],
+    lazy: true,
   },
 );
 
